@@ -6,17 +6,17 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 18:16:14 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/22 19:27:12 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/22 20:51:22 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int		sprt_srv_rec_sol(int x, int y)
+int		sprt_rec_sol(int *x, int *y)
 {
-	x = 0;
-	++y;
-	return (y);
+	*x = 0;
+	++*y;
+	return (*y);
 }
 
 int		can_use(char **argv, int y, int x, char pod)
@@ -33,7 +33,7 @@ int		rec_sol(char ***argv, int y, int x)
 	ar = *argv;
 	pod = '1';
 	if (x > 8)
-		sprt_srv_rec_sol( x, y);
+		sprt_rec_sol(&x, &y);
 	if (g_freecount == 0)
 		return (1);
 	if (ar[y][x] != '.')
