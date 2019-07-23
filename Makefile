@@ -6,7 +6,7 @@
 #    By: oleland <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/22 18:35:43 by oleland           #+#    #+#              #
-#    Updated: 2019/07/23 12:31:50 by etristan         ###   ########.fr        #
+#    Updated: 2019/07/23 12:38:39 by etristan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME = bsq
 
 CFILES = $(wildcard *.c)
 
-HFILES =
+HFILES = bsq.h
 
 OFILES = $(CFILES:.c=.o)
 
