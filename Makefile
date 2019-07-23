@@ -6,7 +6,7 @@
 #    By: oleland <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/22 18:35:43 by oleland           #+#    #+#              #
-#    Updated: 2019/07/23 12:10:20 by etristan         ###   ########.fr        #
+#    Updated: 2019/07/23 12:31:50 by etristan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = bsq
 
-CFILES = *.c
+CFILES = $(wildcard *.c)
 
 HFILES =
 
@@ -24,7 +24,7 @@ OFILES = $(CFILES:.c=.o)
 
 all: $(CFILES) $(NAME)
 $(NAME): $(OFILES)
-	$(CC) $(CFLAGS) $(OFILES) -o $(NAME)
+	$(CC) $(CFLAGS) $^ -o $@
 
 clean:
 	/bin/rm -rf $(OFILES)
