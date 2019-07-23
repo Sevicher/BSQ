@@ -49,7 +49,7 @@ t_sek	ft_kvadrik(t_sek kvadr)
 void	the_end(t_sek sek)
 {
 	g_ly = g_line->next;
-	g_ly = 0;
+	g_y = 0;
 	sek.len--;
 	while (g_y < g_det.at)
 	{
