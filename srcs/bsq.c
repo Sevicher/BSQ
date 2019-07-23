@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 13:43:34 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 17:07:40 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/23 17:47:18 by etristan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_putfile(char *av)
 {
-	int i;
-	int fd;
-	int ret;
-	char see[BUF + 1];
+	int		i;
+	int		fd;
+	int		ret;
+	char	see[BUF + 1];
 
 	i = 0;
 	fd = open(av, O_RDWR);
@@ -58,7 +58,7 @@ void	ft_read(void)
 	see[ret] = '\0';
 	if (!ft_atoi(see))
 		return ;
-	while (see [i] && see [i] != '\n')
+	while (see[i] && see[i] != '\n')
 		i++;
 	i++;
 	ft_continue(i, 0, ret, see);
@@ -99,7 +99,7 @@ int		main(int argc, char **argv)
 	if (argc > 1)
 	{
 		i = 1;
-		while (i <argc)
+		while (i < argc)
 		{
 			ft_putfile(argv[i]);
 			i++;

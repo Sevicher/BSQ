@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 18:16:14 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 17:07:20 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/23 17:48:52 by etristan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_atoi(char *str)
 
 	i = 0;
 	result = 0;
-	while ((9 <= str[i]) && (str[i] <=32))
+	while ((9 <= str[i]) && (str[i] <= 32))
 		i++;
 	while (('0' <= str[i]) && (str[i] <= '9'))
 		result = result * 10 + str[i++] - '0';
@@ -30,27 +30,27 @@ int		ft_atoi(char *str)
 	if (!check_at())
 	{
 		let_it_go();
-		return(0);
+		return (0);
 	}
 	return (1);
 }
 
-int check_at(void)
+int		check_at(void)
 {
 	if (g_det.at < 1)
 	{
 		write(1, "map error\n", 10);
-			return (0);
+		return (0);
 	}
 	if (g_det.c[0] == g_det.c[1])
 	{
 		write(1, "map error\n", 10);
-			return (0);
+		return (0);
 	}
 	if (g_det.c[0] == g_det.c[2])
 	{
 		write(1, "map error\n", 10);
-			return(0);
+		return (0);
 	}
 	if (g_det.c[1] == g_det.c[2])
 	{
@@ -98,7 +98,7 @@ void	ft_continue(int i, int fd, int ret, char *see)
 			let_it_go();
 			return ;
 		}
-		ret  = read(fd, see, BUF);
+		ret = read(fd, see, BUF);
 		see[ret] = '\0';
 		i = 0;
 	}

@@ -6,13 +6,13 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 14:42:53 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 17:03:02 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/23 17:50:16 by etristan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-t_line *ft_create_elem(int x, int y)
+t_line	*ft_create_elem(int x, int y)
 {
 	t_line *list;
 
@@ -57,12 +57,12 @@ void	the_end(t_sek sek)
 	while (g_y < g_det.at)
 	{
 		g_x = 0;
-		while (g_x <g_size)
+		while (g_x < g_size)
 		{
 			if (g_ly)
 				second_end(sek);
 			else
-			   real_end(sek);
+				real_end(sek);
 			g_x++;
 		}
 		write(1, "\n", 1);
@@ -77,7 +77,7 @@ void	second_end(t_sek sek)
 		g_ly = g_ly->next;
 		write(1, &g_det.c[1], 1);
 	}
-	else if (pointcheck (g_x, g_y, sek))
+	else if (pointcheck(g_x, g_y, sek))
 		write(1, &g_det.c[2], 1);
 	else
 		write(1, &g_det.c[0], 1);

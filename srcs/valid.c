@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 17:42:20 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 17:07:18 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/23 17:52:37 by etristan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		valid(char c)
 {
 	if (c == g_det.c[0] || c == g_det.c[1] || c == '\n' || c == '\0')
 	{
-		if ( c == g_det.c[1])
+		if (c == g_det.c[1])
 			ft_list_push_front(g_x, g_y);
 		if (c == '\n')
 		{
@@ -36,7 +36,7 @@ int		valid(char c)
 	return (1);
 }
 
-t_line		*minx(void)
+t_line	*minx(void)
 {
 	t_line	*r_line;
 
@@ -50,6 +50,7 @@ t_line		*minx(void)
 	}
 	return (r_line);
 }
+
 int		pointcheck(int x, int y, t_sek quad)
 {
 	if (quad.x + 1 + quad.len >= g_size)
@@ -62,13 +63,14 @@ int		pointcheck(int x, int y, t_sek quad)
 		{
 			if (y >= quad.y)
 			{
-				if (y <= (quad.y + quad.len +1))
+				if (y <= (quad.y + quad.len + 1))
 					return (1);
 			}
 		}
 	}
 	return (0);
 }
+
 int		checksqr(t_sek quad)
 {
 	t_line *li;
@@ -79,7 +81,7 @@ int		checksqr(t_sek quad)
 	while (li)
 	{
 		if (pointcheck(li->x, li->y, quad))
-				return (0);
+			return (0);
 		li = li->next;
 	}
 	return (1);
