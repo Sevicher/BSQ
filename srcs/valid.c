@@ -6,90 +6,79 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 17:42:20 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/22 21:31:07 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/23 16:26:28 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bsq.h"
 
-int		valid(char **argv)
+int		valid(char c)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	while (argv[++i])
+	if (c == g_det.c[0] || c == g_det.c[1] || c == '\n' || c == '\0')
 	{
-		j = -1;
-		while (argv[i][++j])
+		if ( c == g_det.c[1])
+			ft_list_push_front(g_x, g_y);
+		if (c == '\n')
 		{
-			if (!((argv[i][j] >= '.' && argv[i][j] <= '9') ||
-						argv[i][j] == '.'))
+			if (g_size == 0)
+				g_size = g_x;
+			else if (g_size != g_x)
 				return (0);
-			if (argv[i][j] >= '1' && argv[i][j] <= '9')
-				--g_freecount;
+			g_x = -1;
+			g_y++;
 		}
-		if (j != 9)
-			return (0);
 	}
+	else
+		return (0);
+	if (g_y > g_det.at)
+		return (0);
+	g_x++;
 	return (1);
 }
 
-int		is_x(char **argv, int y, char pod)
+t_line		*minx(void)
 {
-	int		i;
+	t_line	*r_line;
 
-	i = -1;
-	while (++i < 9)
-		if (argv[y][i] == pod)
-			return (0);
-	return (1);
-}
-
-int		is_y(char **argv, int x, char pod)
-{
-	int		i;
-
-	i = 0;
-	while (++i < 10)
-		if (argv[i][x] == pod)
-			return (0);
-	return (1);
-}
-
-int		is_norm_square(char **argv, int yi, int xi, char pod)
-{
-	int		xmax;
-	int		ymax;
-	int		i;
-
-	xmax = xi + 3;
-	ymax = yi + 3;
-	while (yi < ymax)
+	g_ly = g_line;
+	r_line = g_line;
+	while (g_ly)
 	{
-		i = xi - 1;
-		while (++i < xmax)
-			if (argv[yi][i] == pod)
-				return (0);
-		++yi;
+		if (r_line->x < g_ly->x)
+			r_line = g_ly;
+		g_ly = g_ly->next;
 	}
-	return (1);
+	return (r_line);
+}
+int		pointcheck(int x, int y, t_sek quad)
+{
+	if (quad.x + 1 + quad.len >= g_size)
+		return (1);
+	if (g_det.at <= quad.y + 1 + quad.len)
+		return (1);
+	if (x >= quad.x)
+	{
+		if (y >= quad.y)
+		{
+			if (y <= (quad.y + quad.len +1))
+				return (1);
+		}
+	}
+	return (0);
 }
 
-int		is_square(char **argv, int y, int x, char pod)
+int		checksqr(t_sek quad)
 {
-	int		yi;
-	int		xi;
+	t_line *li;
 
-	yi = 1;
-	xi = 0;
-	if (y == 1)
-		yi = 4;
-	if (x == 1)
-		xi = 3;
-	if (y > 1)
-		yi = 7;
-	if (x > 1)
-		xi = 6;
-	return (is_norm_square(argv, yi, xi, pod));
+	while (g_ly->y < quad.y && g_ly->next)
+		g_ly = g_ly->next;
+	li = g_ly;
+	while (li)
+	{
+		if (pointcheck(li->x, li->y, quad))
+				return (0);
+		li = li->next;
+	}
+	return (1);
 }
