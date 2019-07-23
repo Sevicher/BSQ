@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 13:43:34 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 15:29:59 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/23 17:07:40 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putfile(char *av)
 	char see[BUF + 1];
 
 	i = 0;
-	fd = open(av, O_RDONLY);
+	fd = open(av, O_RDWR);
 	if (fd == -1)
 	{
 		write(1, "map error\n", 10);

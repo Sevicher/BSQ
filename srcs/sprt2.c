@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 14:42:53 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 16:23:47 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/23 17:03:02 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	the_end(t_sek sek)
 	while (g_y < g_det.at)
 	{
 		g_x = 0;
-		while (g_y <g_size)
+		while (g_x <g_size)
 		{
 			if (g_ly)
 				second_end(sek);

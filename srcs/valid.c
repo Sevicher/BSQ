@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 17:42:20 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 16:26:28 by oleland          ###   ########.fr       */
+/*   Updated: 2019/07/23 17:07:18 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,17 @@ int		pointcheck(int x, int y, t_sek quad)
 		return (1);
 	if (x >= quad.x)
 	{
-		if (y >= quad.y)
+		if (x <= (quad.x + quad.len + 1))
 		{
-			if (y <= (quad.y + quad.len +1))
-				return (1);
+			if (y >= quad.y)
+			{
+				if (y <= (quad.y + quad.len +1))
+					return (1);
+			}
 		}
 	}
 	return (0);
 }
-
 int		checksqr(t_sek quad)
 {
 	t_line *li;
