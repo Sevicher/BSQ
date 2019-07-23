@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 13:43:34 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 17:47:18 by etristan         ###   ########.fr       */
+/*   Updated: 2019/07/23 20:45:09 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int		determinate(char *str, int i)
 	return (1);
 }
 
-void	ft_read(void)
+void	mitka_pidr(void)
 {
 	int		i;
 	int		ret;
@@ -55,7 +55,7 @@ void	ft_read(void)
 
 	i = 0;
 	ret = read(0, see, BUF);
-	see[ret] = '\0';
+	//see[ret] = '\0';
 	if (!ft_atoi(see))
 		return ;
 	while (see[i] && see[i] != '\n')
@@ -106,6 +106,6 @@ int		main(int argc, char **argv)
 		}
 	}
 	else
-		ft_read();
+		mitka_pidr();
 	return (0);
 }

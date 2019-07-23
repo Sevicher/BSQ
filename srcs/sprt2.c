@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/23 14:42:53 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 17:50:16 by etristan         ###   ########.fr       */
+/*   Updated: 2019/07/23 20:47:52 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,9 @@ t_line	*ft_create_elem(int x, int y)
 	t_line *list;
 
 	list = malloc(sizeof(t_line));
-	if (list)
-	{
 		list->next = NULL;
 		list->x = x;
 		list->y = y;
-	}
 	return (list);
 }
 

@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 18:16:14 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 17:48:52 by etristan         ###   ########.fr       */
+/*   Updated: 2019/07/23 21:24:39 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,22 +39,22 @@ int		check_at(void)
 {
 	if (g_det.at < 1)
 	{
-		write(1, "map error\n", 10);
+		write(2, "map error\n", 10);
 		return (0);
 	}
 	if (g_det.c[0] == g_det.c[1])
 	{
-		write(1, "map error\n", 10);
+		write(2, "map error\n", 10);
 		return (0);
 	}
 	if (g_det.c[0] == g_det.c[2])
 	{
-		write(1, "map error\n", 10);
+		write(2, "map error\n", 10);
 		return (0);
 	}
 	if (g_det.c[1] == g_det.c[2])
 	{
-		write(1, "map error\n", 10);
+		write(2, "map error\n", 10);
 		return (0);
 	}
 	return (1);

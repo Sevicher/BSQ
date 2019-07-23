@@ -6,7 +6,7 @@
 /*   By: oleland <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/22 17:42:36 by oleland           #+#    #+#             */
-/*   Updated: 2019/07/23 16:37:21 by etristan         ###   ########.fr       */
+/*   Updated: 2019/07/23 20:43:04 by oleland          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void				let_it_go(void);
 void				ft_continue(int i, int fd, int ret, char *see);
 t_sek				ft_square(void);
 int					determinate(char *str, int i);
-void				ft_read(void);
+void				mitka_pidr(void);
 void				sponge_bob(void);
 
 t_line				*g_line;
